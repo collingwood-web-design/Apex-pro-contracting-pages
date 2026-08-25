@@ -172,9 +172,9 @@ p {
 }
 
 .logo-menu img {
-  height: 36px;
+  height: 40px;
   width: auto;
-  max-width: min(210px, 52vw);
+  max-width: min(230px, 52vw);
 }
 
 .logo-text {
@@ -217,21 +217,26 @@ p {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
 }
 
 .site-nav a {
   text-decoration: none;
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--wood-deep);
+}
+
+.site-nav a[aria-disabled="true"] {
+  pointer-events: none;
+  cursor: default;
 }
 
 /* Buttons & links */
@@ -326,7 +331,7 @@ p {
   object-fit: cover;
   object-position: center center;
   transform: scale(1.14);
-  animation: hero-image-settle 5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: hero-image-settle 16s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
 .hero-media::after {
@@ -432,6 +437,10 @@ p {
 }
 
 @keyframes hero-image-settle {
+  from {
+    transform: scale(1.14);
+  }
+
   to {
     transform: scale(1);
   }
@@ -489,9 +498,9 @@ p {
   padding: 0;
   color: #4a463f;
   font-family: var(--font-hero);
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
@@ -502,7 +511,7 @@ p {
   padding: 0 1.25rem;
   color: #4a463f;
   font-family: var(--font-hero);
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1;
@@ -536,7 +545,7 @@ p {
     padding: 0 1.25rem;
     white-space: normal;
     text-align: center;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.12em;
   }
 }
 
@@ -1099,8 +1108,8 @@ p {
   }
 
   .logo-menu img {
-    height: 30px;
-    max-width: min(180px, 58vw);
+    height: 33px;
+    max-width: min(198px, 58vw);
   }
 
   .footer-bar {
