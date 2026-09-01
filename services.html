@@ -30,7 +30,14 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="#" aria-disabled="true" tabindex="-1">Services</a>
-        <a href="#" aria-disabled="true" tabindex="-1">Projects</a>
+        <div class="nav-dropdown" aria-label="Projects">
+          <span class="nav-dropdown-label">Projects</span>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li role="none"><a role="menuitem" href="peel-st-collingwood.html">Peel St, Collingwood</a></li>
+            <li role="none"><a role="menuitem" href="port-perry.html">Port Perry</a></li>
+            <li role="none"><a role="menuitem" href="verdum.html">Verdum</a></li>
+          </ul>
+        </div>
         <a href="#" aria-disabled="true" tabindex="-1">About</a>
         <a href="#" aria-disabled="true" tabindex="-1">Contact</a>
       </nav>
@@ -116,5 +123,6 @@
       <p class="legal">&copy; 2026 Apex Pro Contracting. All rights reserved.</p>
     </div>
   </footer>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
