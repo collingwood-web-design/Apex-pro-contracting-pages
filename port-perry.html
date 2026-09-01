@@ -45,43 +45,113 @@
   </header>
 
   <main id="main">
-    <section class="page-hero project-hero">
-      <div class="wrap">
-        <span class="eyebrow">Home addition</span>
-        <h1>Port Perry</h1>
-        <p class="lede">Project details and photography to follow.</p>
+    <section class="project-hero-split" aria-label="Port Perry">
+      <div class="project-hero-split-grid">
+        <div class="project-hero-copy">
+          <span class="eyebrow">Home addition</span>
+          <h1>Port Perry</h1>
+          <p class="project-hero-lede">More room to live, gather, and grow — an addition designed to feel like it was always part of the home.</p>
+          <div class="project-hero-links">
+            <a class="text-link" href="#gallery">View gallery <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#overview">Overview <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <figure class="project-hero-image">
+          <img
+            src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-port-perry.jpg"
+            alt="Home addition in Port Perry"
+            width="1200"
+            height="1600"
+          />
+        </figure>
       </div>
     </section>
 
-    <section class="wrap project-showcase">
-      <figure class="project-hero-media">
-        <img
-          src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-port-perry.jpg"
-          alt="Home addition in Port Perry"
-          width="1200"
-          height="1600"
-        />
-      </figure>
+    <section class="project-gallery" id="gallery" aria-label="Project gallery">
+      <div class="wrap">
+        <span class="eyebrow">Project gallery</span>
+        <div class="project-gallery-grid">
+          <figure class="project-gallery-feature">
+            <img
+              src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-port-perry.jpg"
+              alt="Exterior view of the Port Perry home addition"
+              width="1200"
+              height="1600"
+            />
+          </figure>
+          <div class="project-gallery-thumbs">
+            <figure class="project-gallery-thumb"><div class="media-placeholder">Photography coming soon</div></figure>
+            <figure class="project-gallery-thumb"><div class="media-placeholder">Photography coming soon</div></figure>
+            <figure class="project-gallery-thumb"><div class="media-placeholder">Photography coming soon</div></figure>
+            <figure class="project-gallery-thumb"><div class="media-placeholder">Photography coming soon</div></figure>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="project-panels">
-        <details class="project-panel" open>
-          <summary>Overview</summary>
-          <div class="project-panel-body">
-            <p>Project overview and scope to be confirmed with the client.</p>
-          </div>
-        </details>
-        <details class="project-panel">
-          <summary>Scope of work</summary>
-          <div class="project-panel-body">
-            <p>Scope details coming soon.</p>
-          </div>
-        </details>
-        <details class="project-panel">
-          <summary>Gallery</summary>
-          <div class="project-panel-body">
-            <p>Additional photography coming soon.</p>
-          </div>
-        </details>
+    <section class="project-detail" id="overview">
+      <div class="wrap project-detail-grid">
+        <div class="project-overview">
+          <span class="eyebrow">Overview</span>
+          <h2>Adding space without starting over.</h2>
+          <p>This Port Perry addition created new living space that connects naturally to the existing home — in proportion, in material, and in how it meets the property.</p>
+          <p>Details, materials, and scope to be confirmed with the client.</p>
+          <aside class="project-callout">
+            <svg class="project-callout-icon" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8 22 L24 10 L40 22 V40 H8 Z" />
+              <path d="M20 40 V28 H28 V40" />
+            </svg>
+            <p>Every project is built with care, clear communication, and craftsmanship that holds up over time.</p>
+          </aside>
+        </div>
+        <div class="project-scope">
+          <span class="eyebrow">Scope of work</span>
+          <ul class="project-scope-list">
+            <li>New addition construction</li>
+            <li>Structural integration with existing home</li>
+            <li>Exterior finishing</li>
+            <li>Interior finishing</li>
+            <li>Project details to be confirmed</li>
+          </ul>
+          <dl class="project-meta">
+            <div>
+              <dt>Location</dt>
+              <dd>Port Perry, Ontario</dd>
+            </div>
+            <div>
+              <dt>Project type</dt>
+              <dd>Home addition</dd>
+            </div>
+            <div>
+              <dt>Completed</dt>
+              <dd>To be confirmed</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-panel" id="contact">
+      <div class="wrap cta-panel-grid">
+        <div class="cta-heading">
+          <span class="eyebrow">Thoughtful work starts with a conversation</span>
+          <h2>Let’s talk about your next project</h2>
+        </div>
+        <ul class="cta-contact">
+          <li>
+            <span>Phone</span>
+            To be confirmed
+          </li>
+          <li>
+            <span>Email</span>
+            To be confirmed
+          </li>
+          <li>
+            <span>Location</span>
+            South Georgian Bay, Ontario
+          </li>
+        </ul>
+        <a class="btn" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
@@ -103,6 +173,24 @@
           <a href="https://www.collingwoodwebdesign.com/" target="_blank" rel="noopener noreferrer">Collingwood Web Design</a>
         </p>
       </div>
+      <ul class="social" aria-label="Social">
+        <li>
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor">
+              <path d="M14.2 22v-8.2h2.8l.4-3.2h-3.2V8.6c0-.9.3-1.6 1.6-1.6H17.5V4.1C17.1 4 16 3.9 14.8 3.9c-2.6 0-4.4 1.6-4.4 4.5v2.5H7.6v3.2h2.8V22h3.8Z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </footer>
   <script src="js/site.js" defer></script>
