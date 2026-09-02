@@ -34,6 +34,45 @@
     }
   }
 
+  const initServiceAreaMarquee = () => {
+    const area = document.querySelector(".service-area");
+    const track = area?.querySelector(".service-area-track");
+    if (!area || !track) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const seed = track.querySelector(".service-area-group");
+    if (!seed) return;
+
+    const template = seed.cloneNode(true);
+    track.replaceChildren();
+    track.style.removeProperty("--marquee-distance");
+
+    const appendGroup = (hidden) => {
+      const group = template.cloneNode(true);
+      if (hidden) group.setAttribute("aria-hidden", "true");
+      else group.removeAttribute("aria-hidden");
+      track.appendChild(group);
+    };
+
+    appendGroup(false);
+    while (track.scrollWidth < area.clientWidth + 1) {
+      appendGroup(true);
+    }
+
+    const loopWidth = track.scrollWidth;
+    [...track.children].forEach((child) => {
+      const clone = child.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+    });
+
+    track.style.setProperty("--marquee-distance", `${loopWidth}px`);
+  };
+
+  initServiceAreaMarquee();
+  window.addEventListener("resize", initServiceAreaMarquee);
+
   const viewers = [...document.querySelectorAll(".project-gallery-viewer")];
   if (viewers.length) {
   const lightbox = document.createElement("div");

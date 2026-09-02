@@ -573,10 +573,8 @@ p {
 
 /* Service area ticker */
 .service-area {
-  display: flex;
-  align-items: center;
-  height: 54px;
   overflow: hidden;
+  height: 54px;
   background: #f3f2ef;
   border: 0;
 }
@@ -584,6 +582,7 @@ p {
 .service-area-track {
   display: flex;
   width: max-content;
+  flex-shrink: 0;
   align-items: center;
   animation: service-area-marquee 48s linear infinite;
   will-change: transform;
@@ -625,7 +624,7 @@ p {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-1 * var(--marquee-distance, 50%)));
   }
 }
 
