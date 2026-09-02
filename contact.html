@@ -83,12 +83,12 @@
 
           <label class="contact-field">
             <span>Phone</span>
-            <input name="Phone" type="tel" autocomplete="tel" />
+            <input name="Phone" type="tel" required autocomplete="tel" />
           </label>
 
           <label class="contact-field">
             <span>Project type</span>
-            <select name="Project type">
+            <select name="Project type" required>
               <option value="">Select one</option>
               <option>Home renovation</option>
               <option>Kitchen or bath</option>
@@ -122,6 +122,15 @@
       </div>
     </section>
   </main>
+
+  <div id="contact-success-modal" class="contact-success-modal" hidden role="dialog" aria-modal="true" aria-labelledby="contact-success-title">
+    <div class="contact-success-dialog">
+      <button type="button" class="contact-success-close" aria-label="Close">&times;</button>
+      <span class="eyebrow">Message sent</span>
+      <h2 id="contact-success-title">Thank you for reaching out.</h2>
+      <p>Your message has been sent successfully. We’ll be in touch soon to discuss your project.</p>
+    </div>
+  </div>
 
   <footer class="site-footer site-footer--bar">
     <div class="wrap footer-bar">

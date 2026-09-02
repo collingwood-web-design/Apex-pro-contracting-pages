@@ -35,8 +35,7 @@
   }
 
   const viewers = [...document.querySelectorAll(".project-gallery-viewer")];
-  if (!viewers.length) return;
-
+  if (viewers.length) {
   const lightbox = document.createElement("div");
   lightbox.className = "lightbox";
   lightbox.hidden = true;
@@ -157,4 +156,42 @@
     if (event.key === "ArrowLeft" && galleryItems.length > 1) setLightboxImage(currentIndex - 1);
     if (event.key === "ArrowRight" && galleryItems.length > 1) setLightboxImage(currentIndex + 1);
   });
+  }
+
+  const contactForm = document.getElementById("contact-form");
+  const contactSuccessModal = document.getElementById("contact-success-modal");
+
+  if (contactForm && contactSuccessModal) {
+    const closeBtn = contactSuccessModal.querySelector(".contact-success-close");
+    let lastFocus = null;
+
+    const openSuccessModal = () => {
+      lastFocus = document.activeElement;
+      contactSuccessModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      closeBtn?.focus();
+    };
+
+    const closeSuccessModal = () => {
+      contactSuccessModal.hidden = true;
+      document.body.style.overflow = "";
+      if (lastFocus instanceof HTMLElement) lastFocus.focus();
+    };
+
+    contactForm.addEventListener("cwd-contact:success", () => {
+      contactForm.reset();
+      openSuccessModal();
+    });
+
+    closeBtn?.addEventListener("click", closeSuccessModal);
+
+    contactSuccessModal.addEventListener("click", (event) => {
+      if (event.target === contactSuccessModal) closeSuccessModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (contactSuccessModal.hidden) return;
+      if (event.key === "Escape") closeSuccessModal();
+    });
+  }
 })();
