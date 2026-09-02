@@ -33,4 +33,128 @@
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
+
+  const viewers = [...document.querySelectorAll(".project-gallery-viewer")];
+  if (!viewers.length) return;
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.hidden = true;
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Project image gallery");
+  lightbox.innerHTML = `
+    <button type="button" class="lightbox-close" aria-label="Close gallery">&times;</button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image">&rsaquo;</button>
+    <figure class="lightbox-figure">
+      <img src="" alt="" />
+    </figure>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector(".lightbox-figure img");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const prevBtn = lightbox.querySelector(".lightbox-prev");
+  const nextBtn = lightbox.querySelector(".lightbox-next");
+
+  let activeViewer = null;
+  let galleryItems = [];
+  let currentIndex = 0;
+  let lastFocus = null;
+
+  const setActiveThumb = (viewer, index) => {
+    const leadImg = viewer.querySelector(".project-gallery-lead-btn img");
+    const thumbs = [...viewer.querySelectorAll(".project-gallery-thumb")];
+    const item = galleryItems[index];
+    if (!leadImg || !item) return;
+
+    if (!viewer.dataset.defaultAlt) {
+      viewer.dataset.defaultAlt = leadImg.alt;
+    }
+
+    currentIndex = index;
+    leadImg.src = item.src;
+    leadImg.alt = item.alt || viewer.dataset.defaultAlt;
+
+    thumbs.forEach((thumb, thumbIndex) => {
+      const isActive = thumbIndex === index;
+      thumb.classList.toggle("is-active", isActive);
+      thumb.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  };
+
+  const setLightboxImage = (index) => {
+    if (!galleryItems.length) return;
+    currentIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[currentIndex];
+    const defaultAlt = activeViewer?.dataset.defaultAlt ?? "";
+    lightboxImg.src = item.src;
+    lightboxImg.alt = item.alt || defaultAlt;
+    if (activeViewer) setActiveThumb(activeViewer, currentIndex);
+  };
+
+  const openLightbox = (viewer, index) => {
+    activeViewer = viewer;
+    galleryItems = [...viewer.querySelectorAll(".project-gallery-thumb img")];
+    if (!galleryItems.length) {
+      const leadImg = viewer.querySelector(".project-gallery-lead-btn img");
+      if (!leadImg) return;
+      galleryItems = [leadImg];
+    }
+
+    const showNav = galleryItems.length > 1;
+    prevBtn.hidden = !showNav;
+    nextBtn.hidden = !showNav;
+
+    lastFocus = document.activeElement;
+    setLightboxImage(index);
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  };
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightboxImg.removeAttribute("src");
+    document.body.style.overflow = "";
+    activeViewer = null;
+    galleryItems = [];
+    if (lastFocus instanceof HTMLElement) lastFocus.focus();
+  };
+
+  viewers.forEach((viewer) => {
+    const leadBtn = viewer.querySelector(".project-gallery-lead-btn");
+    const thumbs = [...viewer.querySelectorAll(".project-gallery-thumb")];
+
+    if (leadBtn) {
+      leadBtn.addEventListener("click", () => {
+        const activeThumbIndex = thumbs.findIndex((thumb) => thumb.classList.contains("is-active"));
+        openLightbox(viewer, activeThumbIndex >= 0 ? activeThumbIndex : 0);
+      });
+    }
+
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => {
+        galleryItems = [...viewer.querySelectorAll(".project-gallery-thumb img")];
+        setActiveThumb(viewer, index);
+      });
+    });
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+  prevBtn.addEventListener("click", () => setLightboxImage(currentIndex - 1));
+  nextBtn.addEventListener("click", () => setLightboxImage(currentIndex + 1));
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.hidden) return;
+
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft" && galleryItems.length > 1) setLightboxImage(currentIndex - 1);
+    if (event.key === "ArrowRight" && galleryItems.length > 1) setLightboxImage(currentIndex + 1);
+  });
 })();

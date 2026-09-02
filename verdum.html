@@ -34,12 +34,12 @@
           <span class="nav-dropdown-label">Projects</span>
           <ul class="nav-dropdown-menu" role="menu">
             <li role="none"><a role="menuitem" href="peel-st-collingwood.html">Peel St, Collingwood</a></li>
-            <li role="none"><a role="menuitem" href="port-perry.html">Port Perry</a></li>
             <li role="none"><a role="menuitem" href="verdum.html" aria-current="page">Verdum</a></li>
+            <li role="none"><a role="menuitem" href="port-perry.html">Port Perry</a></li>
           </ul>
         </div>
-        <a href="#" aria-disabled="true" tabindex="-1">About</a>
-        <a href="#" aria-disabled="true" tabindex="-1">Contact</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -70,25 +70,45 @@
     <section class="project-gallery" id="gallery" aria-label="Project gallery">
       <div class="wrap">
         <span class="eyebrow">Project gallery</span>
-        <div class="project-gallery-grid">
-          <figure class="project-gallery-feature">
-            <img
-              src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof.jpg"
-              alt="Roof raise construction at the Verdum project"
-              width="1536"
-              height="1024"
-            />
+        <div class="project-gallery-viewer">
+          <figure class="project-gallery-lead">
+            <button type="button" class="project-gallery-lead-btn" aria-label="View full size image">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-4.jpg" alt="Verdum roof raise project — construction progress" width="1536" height="1024" />
+            </button>
           </figure>
-          <figure class="project-gallery-feature">
-            <img
-              src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-verdum.jpg"
-              alt="Completed exterior at the Verdum project"
-              width="1200"
-              height="1600"
-            />
-          </figure>
+          <div class="project-gallery-thumbs" role="tablist" aria-label="Gallery thumbnails">
+            <button type="button" class="project-gallery-thumb is-active" role="tab" aria-selected="true" aria-label="View image 1">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-4.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 2">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-5.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 3">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-6.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 4">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-7.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 5">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-8.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 6">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-9.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 7">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-10.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 8">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-11.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 9">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-2.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 10">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/verdum-raising-the-roof-3.jpg" alt="" width="1536" height="1024" loading="lazy" />
+            </button>
+          </div>
         </div>
-        <p class="project-gallery-note">Additional project photography coming soon.</p>
       </div>
     </section>
 
@@ -143,7 +163,7 @@
         <ul class="cta-contact">
           <li>
             <span>Phone</span>
-            To be confirmed
+            <a href="tel:+16472356212">647-235-6212</a>
           </li>
           <li>
             <span>Email</span>
@@ -154,7 +174,7 @@
             South Georgian Bay, Ontario
           </li>
         </ul>
-        <a class="btn" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
+        <a class="btn" href="contact.html">Get in touch <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>

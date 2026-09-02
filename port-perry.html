@@ -34,12 +34,12 @@
           <span class="nav-dropdown-label">Projects</span>
           <ul class="nav-dropdown-menu" role="menu">
             <li role="none"><a role="menuitem" href="peel-st-collingwood.html">Peel St, Collingwood</a></li>
-            <li role="none"><a role="menuitem" href="port-perry.html" aria-current="page">Port Perry</a></li>
             <li role="none"><a role="menuitem" href="verdum.html">Verdum</a></li>
+            <li role="none"><a role="menuitem" href="port-perry.html" aria-current="page">Port Perry</a></li>
           </ul>
         </div>
-        <a href="#" aria-disabled="true" tabindex="-1">About</a>
-        <a href="#" aria-disabled="true" tabindex="-1">Contact</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -58,10 +58,10 @@
         </div>
         <figure class="project-hero-image">
           <img
-            src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-port-perry.jpg"
+            src="https://media.cwd-cdn.com/apex-pro-contracting/images/port-perry-home-addition.jpg"
             alt="Home addition in Port Perry"
-            width="1200"
-            height="1600"
+            width="1800"
+            height="2004"
           />
         </figure>
       </div>
@@ -70,17 +70,27 @@
     <section class="project-gallery" id="gallery" aria-label="Project gallery">
       <div class="wrap">
         <span class="eyebrow">Project gallery</span>
-        <div class="project-gallery-grid project-gallery-grid--single">
-          <figure class="project-gallery-feature">
-            <img
-              src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-port-perry.jpg"
-              alt="Exterior view of the Port Perry home addition"
-              width="1200"
-              height="1600"
-            />
+        <div class="project-gallery-viewer">
+          <figure class="project-gallery-lead">
+            <button type="button" class="project-gallery-lead-btn" aria-label="View full size image">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/port-perry-home-addition-2.jpg" alt="Home addition in Port Perry — project gallery" width="1800" height="2004" />
+            </button>
           </figure>
+          <div class="project-gallery-thumbs" role="tablist" aria-label="Gallery thumbnails">
+            <button type="button" class="project-gallery-thumb is-active" role="tab" aria-selected="true" aria-label="View image 1">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/port-perry-home-addition-2.jpg" alt="" width="1800" height="2004" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 2">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/port-perry-home-addition-3.jpg" alt="" width="1800" height="2004" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 3">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/port-perry-home-addition-4.jpg" alt="" width="1800" height="2004" loading="lazy" />
+            </button>
+            <button type="button" class="project-gallery-thumb" role="tab" aria-selected="false" aria-label="View image 4">
+              <img src="https://media.cwd-cdn.com/apex-pro-contracting/images/port-perry-home-addition-5.jpg" alt="" width="1800" height="2004" loading="lazy" />
+            </button>
+          </div>
         </div>
-        <p class="project-gallery-note">Additional project photography coming soon.</p>
       </div>
     </section>
 
@@ -135,7 +145,7 @@
         <ul class="cta-contact">
           <li>
             <span>Phone</span>
-            To be confirmed
+            <a href="tel:+16472356212">647-235-6212</a>
           </li>
           <li>
             <span>Email</span>
@@ -146,7 +156,7 @@
             South Georgian Bay, Ontario
           </li>
         </ul>
-        <a class="btn" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
+        <a class="btn" href="contact.html">Get in touch <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
