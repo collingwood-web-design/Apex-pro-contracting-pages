@@ -56,7 +56,8 @@
     };
 
     appendGroup(false);
-    while (track.scrollWidth < area.clientWidth + 1) {
+    // Cap the fill loop so a zero-width group can never spin forever.
+    for (let i = 0; i < 20 && track.scrollWidth < area.clientWidth + 1; i += 1) {
       appendGroup(true);
     }
 
@@ -70,8 +71,14 @@
     track.style.setProperty("--marquee-distance", `${loopWidth}px`);
   };
 
+  let lastMarqueeWidth = window.innerWidth;
   initServiceAreaMarquee();
-  window.addEventListener("resize", initServiceAreaMarquee);
+  window.addEventListener("resize", () => {
+    // Rebuilding restarts the animation, so only do it when the width really changed.
+    if (window.innerWidth === lastMarqueeWidth) return;
+    lastMarqueeWidth = window.innerWidth;
+    initServiceAreaMarquee();
+  });
 
   const viewers = [...document.querySelectorAll(".project-gallery-viewer")];
   if (viewers.length) {

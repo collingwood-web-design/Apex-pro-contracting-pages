@@ -573,6 +573,8 @@ p {
 
 /* Service area ticker */
 .service-area {
+  display: flex;
+  align-items: center;
   overflow: hidden;
   height: 54px;
   background: #f3f2ef;
@@ -853,7 +855,6 @@ p {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
-  text-align: center;
 }
 
 .cta-panel--slim .cta-credentials {
