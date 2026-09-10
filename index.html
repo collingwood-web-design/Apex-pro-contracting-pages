@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
+    <script>
+      /* Prefer clean URLs when someone lands on the .html form. */
+      (function () {
+        var path = window.location.pathname;
+        if (!/\.html$/i.test(path)) return;
+        var clean = path.replace(/\.html$/i, "");
+        if (/\/index$/i.test(clean)) clean = clean.replace(/\/index$/i, "/") || "/";
+        if (clean === "") clean = "/";
+        window.location.replace(clean + window.location.search + window.location.hash);
+      })();
+    </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Apex Pro Contracting | Home renovation in South Georgian Bay</title>
@@ -21,7 +33,7 @@
 
   <header class="site-header site-header--over-hero">
     <div class="wrap header-inner">
-      <a class="logo logo-menu" href="index.html">
+      <a class="logo logo-menu" href="./">
         <img
           src="https://media.cwd-cdn.com/apex-pro-contracting/images/apex-pro-contracting-menu-dark.svg"
           alt="Apex Pro Contracting"
@@ -32,18 +44,18 @@
       <input class="nav-toggle" type="checkbox" id="nav-toggle" />
       <label class="nav-toggle-label" for="nav-toggle">Menu</label>
       <nav class="site-nav" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="services.html">Services</a>
+        <a href="./" aria-current="page">Home</a>
+        <a href="services">Services</a>
         <div class="nav-dropdown" aria-label="Projects">
           <span class="nav-dropdown-label">Projects</span>
           <ul class="nav-dropdown-menu" role="menu">
-            <li role="none"><a role="menuitem" href="peel-st-collingwood.html">Peel St, Collingwood</a></li>
-            <li role="none"><a role="menuitem" href="verdum.html">Verdum</a></li>
-            <li role="none"><a role="menuitem" href="port-perry.html">Port Perry</a></li>
+            <li role="none"><a role="menuitem" href="peel-st-collingwood">Peel St, Collingwood</a></li>
+            <li role="none"><a role="menuitem" href="verdum">Verdum</a></li>
+            <li role="none"><a role="menuitem" href="port-perry">Port Perry</a></li>
           </ul>
         </div>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -90,7 +102,7 @@
           <span class="eyebrow">Built around your home</span>
           <h2>Built around you.</h2>
           <p>We plan carefully, communicate clearly, and build with materials that hold up to daily life. Every project is shaped around how you live, with thoughtful choices made to suit your home and your needs. The result is a space that feels natural, comfortable and built to last.</p>
-          <a class="text-link" href="services.html">Explore our services <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="services">Explore our services <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -145,7 +157,7 @@
           </article>
         </div>
         <p class="service-bar-cta">
-          <a class="text-link" href="services.html">Explore our services <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="services">Explore our services <span aria-hidden="true">→</span></a>
         </p>
       </div>
     </section>
@@ -157,10 +169,10 @@
             <span class="eyebrow">Selected Projects</span>
             <h2>Crafted with Purpose</h2>
           </div>
-          <a class="text-link" href="projects.html">View all projects <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="projects">View all projects <span aria-hidden="true">→</span></a>
         </div>
         <div class="featured-grid">
-          <a class="featured-card" href="peel-st-collingwood.html">
+          <a class="featured-card" href="peel-st-collingwood">
             <figure>
               <img
                 src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-peel-st-collingwood.jpg"
@@ -174,7 +186,7 @@
               </figcaption>
             </figure>
           </a>
-          <a class="featured-card" href="verdum.html">
+          <a class="featured-card" href="verdum">
             <figure>
               <img
                 src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-verdum.jpg"
@@ -188,7 +200,7 @@
               </figcaption>
             </figure>
           </a>
-          <a class="featured-card" href="port-perry.html">
+          <a class="featured-card" href="port-perry">
             <figure>
               <img
                 src="https://media.cwd-cdn.com/apex-pro-contracting/images/project-port-perry.jpg"
@@ -226,7 +238,7 @@
             South Georgian Bay, Ontario
           </li>
         </ul>
-        <a class="btn" href="contact.html">Get in touch <span aria-hidden="true">→</span></a>
+        <a class="btn" href="contact">Get in touch <span aria-hidden="true">→</span></a>
       </div>
       <div class="wrap">
         <p class="cta-credentials">Apex Pro Contracting is fully insured and licensed. We follow all WSIB standards and are tax compliant with a registered HST number.</p>
@@ -236,7 +248,7 @@
 
   <footer class="site-footer site-footer--bar">
     <div class="wrap footer-bar">
-      <a class="logo logo-menu" href="index.html">
+      <a class="logo logo-menu" href="./">
         <img
           src="https://media.cwd-cdn.com/apex-pro-contracting/images/apex-pro-contracting-menu-dark.svg"
           alt="Apex Pro Contracting"
