@@ -4,6 +4,7 @@
     <script>
       /* Prefer clean URLs when someone lands on the .html form. */
       (function () {
+        if (window.location.protocol === "file:") return;
         var path = window.location.pathname;
         if (!/\.html$/i.test(path)) return;
         var clean = path.replace(/\.html$/i, "");
@@ -17,6 +18,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Port Perry | Apex Pro Contracting</title>
   <meta name="description" content="Home addition in Port Perry by Apex Pro Contracting." />
+  <link rel="canonical" href="https://apexprocontracting.com/port-perry" />
+  <meta property="og:url" content="https://apexprocontracting.com/port-perry" />
   <link rel="icon" href="https://media.cwd-cdn.com/apex-pro-contracting/images/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -152,7 +155,7 @@
       <div class="wrap cta-panel-grid">
         <div class="cta-heading">
           <span class="eyebrow">Thoughtful work starts with a conversation</span>
-          <h2>Let’s talk about your next project</h2>
+          <h2>Let's talk about your next project</h2>
         </div>
         <ul class="cta-contact">
           <li>
@@ -161,7 +164,7 @@
           </li>
           <li>
             <span>Email</span>
-            To be confirmed
+            <a href="mailto:info@apexprocontracting.com">info@apexprocontracting.com</a>
           </li>
           <li>
             <span>Location</span>

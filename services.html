@@ -4,6 +4,7 @@
     <script>
       /* Prefer clean URLs when someone lands on the .html form. */
       (function () {
+        if (window.location.protocol === "file:") return;
         var path = window.location.pathname;
         if (!/\.html$/i.test(path)) return;
         var clean = path.replace(/\.html$/i, "");
@@ -17,6 +18,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | Apex Pro Contracting</title>
   <meta name="description" content="Home renovations, kitchens and baths, additions, and basement renovations by Apex Pro Contracting in South Georgian Bay, Ontario." />
+  <link rel="canonical" href="https://apexprocontracting.com/services" />
+  <meta property="og:url" content="https://apexprocontracting.com/services" />
   <link rel="icon" href="https://media.cwd-cdn.com/apex-pro-contracting/images/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,7 +77,7 @@
       <article class="service-item">
         <span class="eyebrow">02</span>
         <h2>Preparation</h2>
-        <p>We are able to help you navigate the design and engineering process so the client’s vision can be put in drawings and the engineer can sign off. Apex Pro will also meet repeatedly at the building site to get a feel for the area. This allows us to understand your thoughts and help us to plan for and explain the construction process and what has to be done to move forward.</p>
+        <p>We are able to help you navigate the design and engineering process so the client's vision can be put in drawings and the engineer can sign off. Apex Pro will also meet repeatedly at the building site to get a feel for the area. This allows us to understand your thoughts and help us to plan for and explain the construction process and what has to be done to move forward.</p>
       </article>
       <article class="service-item">
         <span class="eyebrow">03</span>
@@ -107,7 +110,7 @@
       <div class="wrap cta-panel-grid">
         <div class="cta-heading">
           <span class="eyebrow">Thoughtful work starts with a conversation</span>
-          <h2>Let’s talk about your next project</h2>
+          <h2>Let's talk about your next project</h2>
         </div>
         <ul class="cta-contact">
           <li>
@@ -116,7 +119,7 @@
           </li>
           <li>
             <span>Email</span>
-            To be confirmed
+            <a href="mailto:info@apexprocontracting.com">info@apexprocontracting.com</a>
           </li>
           <li>
             <span>Location</span>

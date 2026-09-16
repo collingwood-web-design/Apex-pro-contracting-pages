@@ -4,6 +4,7 @@
     <script>
       /* Prefer clean URLs when someone lands on the .html form. */
       (function () {
+        if (window.location.protocol === "file:") return;
         var path = window.location.pathname;
         if (!/\.html$/i.test(path)) return;
         var clean = path.replace(/\.html$/i, "");
@@ -17,6 +18,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Apex Pro Contracting</title>
   <meta name="description" content="Get in touch with Apex Pro Contracting for renovations and construction in South Georgian Bay, Ontario." />
+  <link rel="canonical" href="https://apexprocontracting.com/contact" />
+  <meta property="og:url" content="https://apexprocontracting.com/contact" />
   <link rel="icon" href="https://media.cwd-cdn.com/apex-pro-contracting/images/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,8 +63,8 @@
     <section class="page-hero">
       <div class="wrap">
         <span class="eyebrow">Get in touch</span>
-        <h1>Let’s talk about your next project.</h1>
-        <p class="lede">Tell us a little about what you have in mind — we’ll follow up to discuss scope, timing, and next steps.</p>
+        <h1>Let's talk about your next project.</h1>
+        <p class="lede">Tell us a little about what you have in mind — we'll follow up to discuss scope, timing, and next steps.</p>
       </div>
     </section>
 
@@ -75,11 +78,15 @@
               <a href="tel:+16472356212">647-235-6212</a>
             </li>
             <li>
+              <span>Email</span>
+              <a href="mailto:info@apexprocontracting.com">info@apexprocontracting.com</a>
+            </li>
+            <li>
               <span>Location</span>
               South Georgian Bay, Ontario
             </li>
           </ul>
-          <p class="contact-details-note">Prefer a call? We’re happy to talk through your project and answer questions before anything moves forward.</p>
+          <p class="contact-details-note">Prefer a call? We're happy to talk through your project and answer questions before anything moves forward.</p>
         </div>
 
         <form id="contact-form" class="contact-form">
@@ -146,7 +153,7 @@
       <button type="button" class="contact-success-close" aria-label="Close">&times;</button>
       <span class="eyebrow">Message sent</span>
       <h2 id="contact-success-title">Thank you for reaching out.</h2>
-      <p>Your message has been sent successfully. We’ll be in touch soon to discuss your project.</p>
+      <p>Your message has been sent successfully. We'll be in touch soon to discuss your project.</p>
     </div>
   </div>
 
