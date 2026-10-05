@@ -119,7 +119,8 @@
     }
 
     currentIndex = index;
-    leadImg.src = item.src;
+    if (item.dataset.srcset) leadImg.srcset = item.dataset.srcset;
+    leadImg.src = item.dataset.full || item.src;
     leadImg.alt = item.alt || viewer.dataset.defaultAlt;
 
     thumbs.forEach((thumb, thumbIndex) => {
@@ -134,7 +135,7 @@
     currentIndex = (index + galleryItems.length) % galleryItems.length;
     const item = galleryItems[currentIndex];
     const defaultAlt = activeViewer?.dataset.defaultAlt ?? "";
-    lightboxImg.src = item.src;
+    lightboxImg.src = item.dataset.full || item.currentSrc || item.src;
     lightboxImg.alt = item.alt || defaultAlt;
     if (activeViewer) setActiveThumb(activeViewer, currentIndex);
   };

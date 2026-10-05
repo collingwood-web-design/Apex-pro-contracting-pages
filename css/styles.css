@@ -1021,6 +1021,24 @@ p {
   max-width: 14ch;
 }
 
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 38rem) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.page-hero-media {
+  margin: 0;
+}
+
+.page-hero-media img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  display: block;
+}
+
 .service-list {
   display: grid;
   gap: 0;
@@ -1823,6 +1841,11 @@ p {
   .project-hero-split-grid,
   .project-detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .project-hero-copy {
